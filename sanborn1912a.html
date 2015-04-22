@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Georgetown Sanborn Map, 1912</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<link rel="icon" type="image/png" href="http://i1368.photobucket.com/albums/ag172/gscplanning/logo-favicon_zpsagngw6so.png" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+	
+<div id='map'></div>
+<script>
+
+
+var map = L.map('map').setView([38.209985, -84.559826], 16);
+
+// Add external basemap but still use mapbox.js
+//https://www.mapbox.com/mapbox.js/example/v1.0.0/external-layers/
+var darkMatter = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	subdomains: 'abcd'
+}).addTo(map);
+
+// Add gridLayer and gridControl
+// https://www.mapbox.com/mapbox.js/example/v1.0.0/gridlayer-gridcontrol/
+var sanborn = L.tileLayer('sanborn1912a/{z}/{x}/{y}.png', {
+	maxZoom: 20
+}).addTo(map);
+
+</script>
+
+<!-- Google Analytics -->
+// <script>
+//   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+//   ga('create', 'UA-59507161-2', 'auto');
+//   ga('send', 'pageview');
+
+// </script>
+</body>
+</html>
