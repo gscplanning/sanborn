@@ -1,0 +1,11 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "-84.5553,38.2098,16", 
+    "bounds": "-84.5653,38.202,-84.5438,38.2188", 
+    "minzoom": "16", 
+    "version": "1.0.0", 
+    "template": "", 
+    "maxzoom": "20", 
+    "name": "sanborn1912_wgs84"
+}
