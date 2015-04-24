@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />
 
+    <link rel="stylesheet" href="css/style.css" />
+
     <style>
         body {
             padding: 0;
@@ -40,16 +42,16 @@
     <div id="sidebar" class="sidebar collapsed">
         <!-- Nav tabs -->
         <ul class="sidebar-tabs" role="tablist">
-            <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
-            <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
-            <li><a href="#messages" role="tab"><i class="fa fa-envelope"></i></a></li>
-            <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+            <li><a href="#home" class="sidebar-nav" role="tab"><i class="fa fa-bars"></i></a></li>
+            <li><a href="#legend" class="sidebar-nav" role="tab"><i class="fa fa-list-alt"></i></a></li>
+            <li><a href="#sources" class="sidebar-nav" role="tab"><i class="fa fa-archive"></i></a></li>
+            <li><a href="#settings" class="sidebar-nav" role="tab"><i class="fa fa-gear"></i></a></li>
         </ul>
 
         <!-- Tab panes -->
         <div class="sidebar-content active">
             <div class="sidebar-pane" id="home">
-                <h1>sidebar-v2</h1>
+                <h1>Georgetown, 1912</h1>
 
                 <p>A responsive sidebar for mapping libraries like <a href="http://leafletjs.com/">Leaflet</a> or <a href="http://openlayers.org/">OpenLayers</a>.</p>
 
@@ -61,8 +63,11 @@
 
                 <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
-            <div class="sidebar-pane" id="profile"><h1>Profile</h1></div>
-            <div class="sidebar-pane" id="messages"><h1>Messages</h1></div>
+            <div class="sidebar-pane" id="legend">
+                <h1>Legend</h1>
+                    <img src="img/key.png" alt="map key" class="key"/> 
+            </div>
+            <div class="sidebar-pane" id="sources"><h1>Sources</h1></div>
             <div class="sidebar-pane" id="settings"><h1>Settings</h1></div>
         </div>
     </div>
@@ -113,5 +118,15 @@
         var sidebar = L.control.sidebar('sidebar').addTo(map);
 
     </script>
+    
+    <!-- A little jQuery to keep the URL hash from updating when clicking the nav buttons -->
+    <script>
+    // event.preventDefault: (http://api.jquery.com/event.preventDefault/)
+    // Idea frome Stack Overflow: (http://stackoverflow.com/a/20215413)
+    $('.sidebar-nav').click(function(event){
+        event.preventDefault();
+    });
+    </script>
+
 </body>
 </html>
