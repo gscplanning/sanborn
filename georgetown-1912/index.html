@@ -84,7 +84,10 @@
     <script src="js/leaflet-sidebar.js"></script>
 
     <script>
-        var map = L.map('map');
+        var map = L.map('map', {
+            maxZoom: 20,
+            minZoom: 16
+        });
         map.setView([38.209985, -84.559826], 16);
 
         var HERE_satelliteDay = L.tileLayer('http://{s}.{base}.maps.cit.api.here.com/maptile/2.1/maptile/{mapID}/satellite.day/{z}/{x}/{y}/256/png8?app_id=LaVGiK8OFXTbRctQu6Q0&app_code=LZeM-VuB2Q-7GzKMcvVzYg', {
@@ -93,12 +96,17 @@
             mapID: 'newest',
             app_id: 'LaVGiK8OFXTbRctQu6Q0',
             app_code: 'LZeM-VuB2Q-7GzKMcvVzYg',
-            base: 'aerial'
+            base: 'aerial',
+            maxNativeZoom: 19,
+            maxZoom: 20
+           /* Why use maxNativeZoom?
+            -HERE satellite.day only goes to z19 (which is still dang good), but we have maxZoom: 20. maxNativeZoom lets us continue to z20 with the tiles from z19!
+            -Source: http://gis.stackexchange.com/questions/78843/zoom-further-in-with-leaflet-javascirpt-api
+            -LeafletJS API: http://leafletjs.com/reference.html#tilelayer-maxnativezoom */
         }).addTo(map);
 
         var sanborn = L.tileLayer('../sanborn1912_wgs84/{z}/{x}/{y}.png', {
-            maxZoom: 20,
-            minZoom: 16
+            attribution: '1912 Sanborn Map Company, <a href="http://libraries.uky.edu/SC" />University of Kentucky Special Collections Research Center</a>'
         }).addTo(map);
 
         // Add opacity control using Leaflet.OpacityControls plugin
