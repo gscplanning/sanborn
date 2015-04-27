@@ -98,14 +98,17 @@
             app_code: 'LZeM-VuB2Q-7GzKMcvVzYg',
             base: 'aerial',
             maxNativeZoom: 19,
-            maxZoom: 20
+            maxZoom: 20,
            /* Why use maxNativeZoom?
             -HERE satellite.day only goes to z19 (which is still dang good), but we have maxZoom: 20. maxNativeZoom lets us continue to z20 with the tiles from z19!
             -Source: http://gis.stackexchange.com/questions/78843/zoom-further-in-with-leaflet-javascirpt-api
             -LeafletJS API: http://leafletjs.com/reference.html#tilelayer-maxnativezoom */
+            minZoom: 16
         }).addTo(map);
 
         var sanborn = L.tileLayer('../sanborn1912_wgs84/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            minZoom: 16,
             attribution: '1912 Sanborn Map Company, <a href="http://libraries.uky.edu/SC" />University of Kentucky Special Collections Research Center</a>'
         }).addTo(map);
 
