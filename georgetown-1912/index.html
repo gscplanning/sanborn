@@ -50,19 +50,32 @@
 
         <!-- Tab panes -->
         <div class="sidebar-content active">
-            <div class="sidebar-pane" id="home">
+            <div class="sidebar-pane map-navigation" id="home">
                 <h1>Georgetown 1912 Sanborn Map</h1>
-
-                <p>A responsive sidebar for mapping libraries like <a href="http://leafletjs.com/">Leaflet</a> or <a href="http://openlayers.org/">OpenLayers</a>.</p>
-
-                <p>It's easy to take for granted nowadays the ease with which one can obtain information about a place. Platforms like GoogleMaps, ArcGIS Online, and OpenStreetMap as well as derivative applications like Yelp!, Zillow, and our own interactive maps here at the Planning Commission allow users to have data-drenched experiences that help themunderstand and navigate the hyperlocal scale of their world.</p>
-
-                <p>Sanborn created maps so that insurance companies could determine if your building would be insured and how much it would cost you. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
+            
+                <h2>Sanborn Maps</h2>
+                <p>For map nerds, history buffs, genealogy gurus, and planners, Sanborn maps rank as some of the most revered records of populated places in the US. First created following the Civil War, these maps were developed by the Sanborn Company to help insurance companies calculate liability for fire insurance. However, the level of detail collected has left behind a unique and dense record of the past for the 12,000 communities surveyed.</p>
                 <a class="embedly-card" href="http://en.wikipedia.org/wiki/Sanborn_Maps">Sanborn Maps</a>
                 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 
-                <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <h2>Georgetown, 1912</h2>
+                <p>Sanborn carried out surveys and updates of Georgetown  in 1886, 1895, 1901, 1907, and 1912. These can be accessed and downloaded from the <a href="http://kdl.kyvl.org/catalog?q=sanborn+maps+georgetown&amp;search_field=all_fields&amp;f%5Bformat%5D%5B%5D=maps&amp;commit=search">Kentucky Digital Library</a>.</p>
+
+                <p>The map you see here is a combination of the 15+ map sheets from the 1912 survey of Georgetown. Feel free to explore the map on your own. Use the slider or buttons in the top-right corner of the map to change the opacity of the Sanborn map. This will allow you to compare and contrast the 1912 map against 2014 aerial imagery. We've also spotted a few example of places that have stayed and places that have stayed the same. Click the links below to move the map to those locations:</p>
+                <h3>Same</h3>
+                <ul>
+                    <li><a href='' data-zoom='20' data-position='38.210228, -84.559122'>Court House &amp; City Hall</a></li>
+                    <li>Thing</li>
+                    <li>Other Thing</li>
+                </ul>
+                <h3>Different</h3>
+                <ul>
+                    <li><a href='' data-zoom='19' data-position='38.206995, -84.554754'>Georgetown College</a></li>
+                    <li>Thing</li>
+                    <li>Other thing</li>
+                </ul>
+                <h2>Moving Forward</h2>
+                <p >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="sidebar-pane" id="legend">
                 <h1>Legend</h1>
@@ -85,7 +98,7 @@
 
     <script>
         var map = L.map('map', {
-            maxZoom: 20,
+            maxZoom: 21,
             minZoom: 16
         });
         map.setView([38.209985, -84.559826], 16);
@@ -98,7 +111,7 @@
             app_code: 'LZeM-VuB2Q-7GzKMcvVzYg',
             base: 'aerial',
             maxNativeZoom: 19,
-            maxZoom: 20,
+            maxZoom: 21,
            /* Why use maxNativeZoom?
             -HERE satellite.day only goes to z19 (which is still dang good), but we have maxZoom: 20. maxNativeZoom lets us continue to z20 with the tiles from z19!
             -Source: http://gis.stackexchange.com/questions/78843/zoom-further-in-with-leaflet-javascirpt-api
@@ -107,7 +120,8 @@
         }).addTo(map);
 
         var sanborn = L.tileLayer('../sanborn1912_wgs84/{z}/{x}/{y}.png', {
-            maxZoom: 20,
+            maxNativeZoom: 20, 
+            maxZoom: 21,
             minZoom: 16,
             attribution: '1912 Sanborn Map Company, <a href="http://libraries.uky.edu/SC" />University of Kentucky Special Collections Research Center</a>'
         }).addTo(map);
@@ -129,6 +143,39 @@
         // L.easyPrint().addTo(map)
 
         var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+        document.querySelector('.map-navigation').onclick = function(abc) {
+            var pos = abc.target.getAttribute('data-position');
+            var zoom = abc.target.getAttribute('data-zoom');
+            if (pos && zoom) {
+                var locat = pos.split(',');
+                var zoo = parseInt(zoom);
+            map.setView(locat, zoo, {animation: true});
+            return false;
+            }
+        } 
+
+        // document.getElementById('map-navigation').onclick = function(abc) {
+        //     var pos = abc.target.getAttribute('data-position');
+        //     var zoom = abc.target.getAttribute('data-zoom');
+        //     if (pos && zoom) {
+        //         var locat = pos.split(',');
+        //         var zoo = parseInt(zoom);
+        //         map.setView(locat, zoo, {animation: true});
+        //         return false;
+        //     }
+        // } 
+
+        // document.getElementsByClassName('map-navigation').onclick = function() {
+        //     var pos = this.target.getAttribute('data-position');
+        //     var zoom = this.target.getAttribute('data-zoom');
+        //     if (pos && zoom) {
+        //         var locat = pos.split(',');
+        //         var zoo = parseInt(zoom);
+        //         map.setView(locat, zoo, {animation: true});
+        //         return false;
+        //     }
+        // }  
 
     </script>
     
