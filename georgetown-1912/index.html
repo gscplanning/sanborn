@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/Control.Opacity.css" />
 
-    <link rel="stylesheet" href="js/easyPrint.css"/>
+    <!-- <link rel="stylesheet" href="js/easyPrint.css"/> -->
 
     <link rel="stylesheet" href="css/leaflet-sidebar.css" />
 
@@ -79,7 +79,7 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/Control.Opacity.js"></script>
-    <script src="js/leaflet.easyPrint.js"></script>
+    <!--<script src="js/leaflet.easyPrint.js"></script>-->
     <script src="js/jQuery.print.js"></script>
     <script src="js/leaflet-sidebar.js"></script>
 
@@ -125,7 +125,8 @@
 
         sanborn.setOpacity(0.90);
 
-        L.easyPrint().addTo(map)
+        // This print feature is cool in theory, but not ready for primetime
+        // L.easyPrint().addTo(map)
 
         var sidebar = L.control.sidebar('sidebar').addTo(map);
 
