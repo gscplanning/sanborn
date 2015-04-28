@@ -1,6 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:400,700);
+
+body, * {
+	padding: 0;
+	margin: 0;
+}
+body, html, #map {
+	font-family: 'Roboto', sans-serif;
+	height: 100%
+}
+
 .key {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Slab', serif;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+}
+
+h1 {
+	font-weight: 700;
+}
+.subtitle {
+	margin-top: 0;
+}
+
+hr.top, hr.bottom {
+	height: 12px;
+    	border: 0;
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block;
+}
+hr.top {
+    box-shadow: inset 0 -12px 12px -12px rgba(0,0,0,0.5);
+}
+hr.bottom {
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+}
+
+.sites>p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.sites>h3 {
+	margin-top: 5px;
+}
+.sites>hr{
+	width: 50%;
+}
+
+
+.text-center {
+	text-align: center;
+}
+.ul-none {
+	list-style-type: none;
+}
+
+dl {
+ width:100%;
+ overflow:hidden;
+ margin-bottom: 10px;
+/* background:#ff0;
+*/}
+dt {
+ float:left;
+ width:50%; /* adjust the width; make sure the total of both is 100% */
+/* background:#cc0;
+*/
+margin-top: 3px;
+}
+dd {
+ float:left;
+ width:50%; /* adjust the width; make sure the total of both is 100% */
+/* background:#dd0
+*/
+font-style: italic;
+margin-top: 3px;
 }
