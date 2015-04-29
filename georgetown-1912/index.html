@@ -2,21 +2,16 @@
 <html>
 <head>
     <title>Georgetown Sanborn Map, 1912</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- CSS -->
     <link rel="icon" type="image/png" href="http://i1368.photobucket.com/albums/ag172/gscplanning/logo-favicon_zpsagngw6so.png" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
-
     <link rel="stylesheet" href="css/Control.Opacity.css" />
-
     <!-- <link rel="stylesheet" href="js/easyPrint.css"/> -->
-
     <link rel="stylesheet" href="css/leaflet-sidebar.css" />
-
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />
-
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -28,7 +23,6 @@
             <li class="active"><a href="#home" class="sidebar-nav " role="tab"><i class="fa fa-bars"></i></a></li>
             <li><a href="#legend" class="sidebar-nav" role="tab"><i class="fa fa-key"></i></a></li>
             <li><a href="#sources" class="sidebar-nav" role="tab"><i class="fa fa-info"></i></a></li>
-            <!-- <li><a href="#settings" class="sidebar-nav" role="tab"><i class="fa fa-info-circle"></i></a></li> -->
         </ul>
 
         <!-- Tab panes -->
@@ -42,26 +36,30 @@
                 <hr class="top">
                 <h2>Sanborn Maps</h2>
                 <hr class="bottom">
-                    <p>For map nerds, history buffs, genealogy gurus, and planners, Sanborn maps rank as some of the most beloved records of populated places in the US. First appearing after the Civil War, these maps were developed by the Sanborn Company to aid in assessing liability for fire insurance firms. However, the rich detail found in each square inch of these maps make them valuable records of the past for the 12,000 communities surveyed.</p>
-                    <p><strong><em>Read more about Sanborn Maps:</em></strong></p>
 
-                    <a class="embedly-card" href="http://en.wikipedia.org/wiki/Sanborn_Maps">Sanborn Maps</a>
-                    <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+                <p>For map nerds, history buffs, genealogy gurus, and planners, Sanborn maps rank as some of the most beloved records of populated places in the US. First appearing after the Civil War, these maps were developed by the Sanborn Company to aid in assessing liability for fire insurance firms. However, the rich detail found in each square inch of these maps make them valuable records of the past for the 12,000 communities surveyed.</p>
+
+                <p><strong><em>Read more about Sanborn Maps:</em></strong></p>
+
+                <a class="embedly-card" href="http://en.wikipedia.org/wiki/Sanborn_Maps">Sanborn Maps</a>
+                <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 
                     <hr class="top">
                     <h2>Georgetown, 1912</h2>
                     <hr class="bottom">
+
                     <p>Sanborn carried out surveys and updates of Georgetown  in 1886, 1895, 1901, 1907, and 1912. Map sheets from these surveys can be accessed and downloaded from the <a href="http://kdl.kyvl.org/catalog?q=sanborn+maps+georgetown&amp;search_field=all_fields&amp;f%5Bformat%5D%5B%5D=maps&amp;commit=search">Kentucky Digital Library</a>.</p>
 
                     <p>The map you see here is a combination of the 15+ map sheets from Sanborn's 1912 survey of Georgetown. We've also spotted a few examples (listed below) of places that have undergone major changes and others that have remained rather untouched. That said, feel free to explore the map on your own. Use the slider or buttons in the top-right corner to change the opacity of the Sanborn map so you can compare and contrast the 1912 map against 2014 aerial imagery. </p>
                 
-                <div class="text-center sites">            
-                     <hr class="top">
-                     <h3>Areas of change...</h3>
+                <div class="text-center sites">
+                    <hr class="top">
+                    <h3>Areas of change...</h3>
                     <p><a href='' data-zoom='18' data-position='38.206995, -84.554754'>Georgetown College</a></p>
                     <p><a href='' data-zoom='19' data-position='38.205821, -84.559020'>Garth School</a></p>
                     <p><a href='' data-zoom='19' data-position='38.208821, -84.562076'>Royal Spring Park</a></p>
                     <hr class="bottom">
+
                     <hr class="top">
                     <h3>...and those enduring</h3>
                     <p><a href='' data-zoom='20' data-position='38.210228, -84.559122'>Court House &amp; City Hall</a></p>
@@ -73,50 +71,53 @@
                 <hr class="top">
                 <h2>Moving Forward</h2>
                 <hr class="bottom">
+
                 <p >Even with powerful grapics and mapping software, the process of stitching together the Sanborn map sheets into a single, seamless basemap is a slow one. Over the coming months, we plan to roll out earlier editions of Sanborn's mappings in Georgetown. Once completed, we hope the you will find these maps to be another helpful resource  for understanding this community's past.</p>
+
                 <p>If you have any questions, comments, concerns, or simply some cool observations, <a href="mailto:rcooper@gscplanning.com?Subject=Georgetown%20Sanborn,%201912">we want to hear them</a>! 
                 </p>
             </div>
 
             <!-- Legend/Key -->
             <div class="sidebar-pane" id="legend">
-<!--                 <h1>Legend</h1>
- -->                <hr class="top">
-                    <img src="img/key.png" alt="map key" class="key"/> 
-                <hr class="bottom">
+                    <img src="img/key.png" alt="map key" class="key"/>
             </div>
+
+            <!-- Sources -->
             <div class="sidebar-pane" id="sources">
                 <h1>Sources</h1>
                 <hr class="top">
                 <h3>Georgetown Sanborn Map</h3>
                 <hr class="bottom">
+                
                 <dl>
                   <dt>Description: </dt>
-                  <dd>Derived from 19 sheets: "June 1912." Shows property lines, buildings with construction and insurance characteristics and addresses
-                 </dd>
+                    <dd>Derived from 19 sheets: "June 1912." Shows property lines, buildings with construction and insurance characteristics and addresses</dd>
                   <dt>Creator: </dt>
-                  <dd>Sanborn Map Company</dd>
+                    <dd>Sanborn Map Company</dd>
                   <dt>Repository: </dt>
-                  <dd>University of Kentucky Special Collections Research Center</dd>
+                    <dd>University of Kentucky Special Collections Research Center</dd>
                   <dt>Access: </dt>
-                  <dd>
-                    <ul class="ul-none">
-                        <li><a href="http://kdl.kyvl.org/" target="_blank">Kentucky Digital Archive</a></li>
-                        <li><a href="http://exploreuk.uky.edu/" target="_blank">ExploreUK</a></li>
-                    </ul>
-                </dd>
+                      <dd>
+                        <ul class="ul-none">
+                            <li><a href="http://kdl.kyvl.org/" target="_blank">Kentucky Digital Archive</a></li>
+                            <li><a href="http://exploreuk.uky.edu/" target="_blank">ExploreUK</a></li>
+                        </ul>
+                    </dd>
                 </dl>
                 <hr class="bottom">
+
                 <br>
+
                 <p>View the code and fork this map on <a href="https://github.com/gscplanning/sanborn" target="_blank">GitHub</a>.</p>
             </div>
-
-            <!-- <div class="sidebar-pane" id="settings"><h1>Settings</h1></div> -->
         </div>
     </div>
 
+    <!-- Map -->
     <div id="map" class="sidebar-map"></div>
 
+    <!-- JavaScript -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -125,6 +126,7 @@
     <script src="js/jQuery.print.js"></script>
     <script src="js/leaflet-sidebar.js"></script>
 
+    <!-- Mapping stuff -->
     <script>
         var map = L.map('map', {
             maxZoom: 21,
@@ -183,29 +185,6 @@
             return false;
             }
         } 
-
-        // document.getElementById('map-navigation').onclick = function(abc) {
-        //     var pos = abc.target.getAttribute('data-position');
-        //     var zoom = abc.target.getAttribute('data-zoom');
-        //     if (pos && zoom) {
-        //         var locat = pos.split(',');
-        //         var zoo = parseInt(zoom);
-        //         map.setView(locat, zoo, {animation: true});
-        //         return false;
-        //     }
-        // } 
-
-        // document.getElementsByClassName('map-navigation').onclick = function() {
-        //     var pos = this.target.getAttribute('data-position');
-        //     var zoom = this.target.getAttribute('data-zoom');
-        //     if (pos && zoom) {
-        //         var locat = pos.split(',');
-        //         var zoo = parseInt(zoom);
-        //         map.setView(locat, zoo, {animation: true});
-        //         return false;
-        //     }
-        // }  
-
     </script>
     
     <!-- A little jQuery to keep the URL hash from updating when clicking the nav buttons -->
