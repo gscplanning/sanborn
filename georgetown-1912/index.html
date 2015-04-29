@@ -128,11 +128,16 @@
 
     <!-- Mapping stuff -->
     <script>
+        var southWest = L.latLng(38.1529010062, -84.6837828154),
+            northEast = L.latLng(38.3197065698, -84.4327807672),
+            bounds = L.latLngBounds(southWest, northEast);
+
         var map = L.map('map', {
+            maxBounds: bounds,
             maxZoom: 21,
             minZoom: 16
         });
-        map.setView([38.209985, -84.559826], 16);
+        map.setView([38.209848, -84.558070], 18);
 
         var HERE_satelliteDay = L.tileLayer('http://{s}.{base}.maps.cit.api.here.com/maptile/2.1/maptile/{mapID}/satellite.day/{z}/{x}/{y}/256/png8?app_id=LaVGiK8OFXTbRctQu6Q0&app_code=LZeM-VuB2Q-7GzKMcvVzYg', {
             attribution: 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
